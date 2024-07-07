@@ -21,6 +21,37 @@ forEach
 - for 대체할수 있는 forEach 문
 
 ```
+let names = [
+  "Steven Paul Jobs",
+  "Bill Gates",
+  "Mark Elliot Zuckerberg",
+  "Elon Musk",
+  "Jeff Bezos",
+  "Warren Edward Buffett",
+  "Larry Page",
+  "Larry Ellison",
+  "Tim Cook",
+  "Lloyd Blankfein",
+];
+
+// forEach
+names.forEach((item, index) => {
+    console.log(item, index);
+});
+
+/* 결과
+Steven Paul Jobs 0
+Bill Gates 1
+Mark Elliot Zuckerberg 2
+Elon Musk 3
+Jeff Bezos 4
+Warren Edward Buffett 5
+Larry Page 6
+Larry Ellison 7
+Tim Cook 8
+Lloyd Blankfein 9
+
+*/
 ```
 map 문제
 ---
@@ -41,51 +72,57 @@ let names = [
   "Lloyd Blankfein",
 ];
 
-
-let newNames = names.map((item) => {
-    // 모든 이름을 대문자로 바꾸어서 출력하시오.
-    let oneCase = item.toUpperCase();
-    //성을제외한 이름만 출력하시오
-    let twoCase = oneCase.split(" ")[0];
-    // 이름의 이니셜만 출력하시오
-    let threeCase = oneCase
-        .split(" ")
-        .map((word) => word[0])
-        .join("");
-
-    let itemResult = {
-        oneCase: oneCase,
-        twoCase: twoCase,
-        threeCase: threeCase,
-    };
-
-    return itemResult;
+// 모든 이름을 대문자로 바꾸어서 출력하시오.
+let oneCase = names.map((item) => {
+    return item.toUpperCase();
 });
-console.log(newNames);
+console.log(oneCase)
+/* 결과
+[
+  'STEVEN PAUL JOBS',
+  'BILL GATES',
+  'MARK ELLIOT ZUCKERBERG',
+  'ELON MUSK',
+  'JEFF BEZOS',
+  'WARREN EDWARD BUFFETT',
+  'LARRY PAGE',
+  'LARRY ELLISON',
+  'TIM COOK',
+  'LLOYD BLANKFEIN'
+]
+*/
+
+
+//성을제외한 이름만 출력하시오
+let twoCase =  names.map((item) => {
+    return item.split(" ")[0];
+});
+console.log(twoCase)
+/* 결과
+  'Steven', 'Bill',
+  'Mark',   'Elon',
+  'Jeff',   'Warren',
+  'Larry',  'Larry',
+  'Tim',    'Lloyd'
+]
+*/
+
+// 이름의 이니셜만 출력하시오
+let threeCase = names.map((item) => {
+    return item.split(" ").map((word) => word[0]).join("");
+});
+console.log(threeCase)
 
 /* 결과
-(10) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
-0: Object
-oneCase: "STEVEN PAUL JOBS"   // 대문자변환
-threeCase: "SPJ"  // 이니셜
-twoCase: "STEVEN" // 성 제외 이름만
-__proto__: Object
-1: Object
-oneCase: "BILL GATES"
-threeCase: "BG"
-twoCase: "BILL"
-__proto__: Object
-2: Object
-3: Object
-4: Object
-5: Object
-6: Object
-7: Object
-8: Object
-9: Object
-length: 10
-__proto__: Array(0)
+[
+  'SPJ', 'BG', 'MEZ',
+  'EM',  'JB', 'WEB',
+  'LP',  'LE', 'TC',
+  'LB'
+]
 */
+
+
 ```
 
 filter 문제
