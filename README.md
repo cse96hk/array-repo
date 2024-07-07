@@ -167,15 +167,16 @@ let dupNames = names.filter((item) => {
     return pattern.test(item);
 });
 console.log(dupNames);
-/*
-(7) ["Bill Gates", "Mark Elliot Zuckerberg", "Jeff Bezos", "Warren Edward Buffett", "Larry Page", "Larry Ellison", "Tim Cook"]
-0: "Bill Gates"
-1: "Mark Elliot Zuckerberg"
-2: "Jeff Bezos"
-3: "Warren Edward Buffett"
-4: "Larry Page"
-5: "Larry Ellison"
-6: "Tim Cook"
+/* 결과
+[
+  'Bill Gates',
+  'Mark Elliot Zuckerberg',
+  'Jeff Bezos',
+  'Warren Edward Buffett',
+  'Larry Page',
+  'Larry Ellison',
+  'Tim Cook'
+]
 */
 
 ```
