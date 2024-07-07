@@ -149,14 +149,16 @@ let aNames = names.filter((item) => {
 });
 console.log(aNames);
 /* 결과
-(7) ["Steven Paul Jobs", "Bill Gates", "Mark Elliot Zuckerberg", "Warren Edward Buffett", "Larry Page", "Larry Ellison", "Lloyd Blankfein"]
-0: "Steven Paul Jobs"
-1: "Bill Gates"
-2: "Mark Elliot Zuckerberg"
-3: "Warren Edward Buffett"
-4: "Larry Page"
-5: "Larry Ellison"
-6: "Lloyd Blankfein"
+[
+  'Steven Paul Jobs',
+  'Bill Gates',
+  'Mark Elliot Zuckerberg',
+  'Warren Edward Buffett',
+  'Larry Page',
+  'Larry Ellison',
+  'Lloyd Blankfein'
+]
+
 */
 
 // 이름에 같은 글자가 연속해서 들어간 사람을 출력하시오. (예-tt,ff,ll 이런 글자들)
