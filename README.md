@@ -208,10 +208,14 @@ console.log(over20);
 
 //성을 제외한 이름에 p를 포함한 사람이 있는가?(대소문자 상관 no)
 let pNames = names.some((item) => {
-    return item.includes("p");
+    // 성을 제외한 이름 부분만 검사
+    let nameParts = item.split(" ");
+    let firstNameAndMiddleName = nameParts.slice(0, -1).join(" ").toLowerCase(); // 성 제외, 소문자로 변환
+    return firstNameAndMiddleName.includes("p");
 });
+
 console.log(pNames);
-// 결과 : false
+// true 
 
 ```
 
